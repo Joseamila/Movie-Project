@@ -9,6 +9,16 @@
         return data
     }
 
+    // Buscador
+
+    const $form = document.getElementById('form');
+
+    $form.addEventListener('submit', (event) =>{
+        event.preventDefault();
+    })
+
+    // Buscador
+
         const actionList = await getData('https://yts.mx/api/v2/list_movies.json?genre=action');
         const dramaList = await getData('https://yts.mx/api/v2/list_movies.json?genre=drama');
         const thrillerList = await getData('https://yts.mx/api/v2/list_movies.json?genre=thriller');
@@ -38,7 +48,11 @@
             return html.body.children[0]
         }
 
-        
+        function addEventClick(event){
+            event.addEventListener('click', () =>
+            alert('qlq'));
+        }
+
         function renderMovieList(list, $container){
         
         $container.querySelector('.img').remove();
@@ -48,14 +62,15 @@
                 const movieElement = createTemplate(HTMLString);
                 
                 $container.append(movieElement);
+                addEventClick(movieElement);
             })
         }
-
+        
 
         const $actionListContainer = document.getElementById('action');
         renderMovieList(actionList.data.movies, $actionListContainer);
 
-        const $dramaListContainer = document.getElementeById('drama');
+        const $dramaListContainer = document.getElementById('drama');
         renderMovieList(dramaList.data.movies, $dramaListContainer);
 
         const $thrillerListContainer = document.getElementById('thriller');
@@ -65,7 +80,6 @@
     // Template de las peliculas
 
 
-//  Bucador         const $form = document.getElementById('form');
 
 // Posible Modal         const $modalContainer = document.getElementById('modal');
 //         const $imgContainer = document.getElementById('img');

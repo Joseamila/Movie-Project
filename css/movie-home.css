@@ -86,7 +86,7 @@ nav li a{
 
 .header-description-container{
     display: flex;
-    height: 90%;
+    height: 40%;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -121,8 +121,8 @@ nav li a{
 }
 
 .button-header1:hover{
-    color: rgb(255, 255, 255);  
-    background: rgb(197, 4, 4); 
+    color: rgb(255, 255, 255);
+    background: rgb(197, 4, 4);
 }
 
 .description-suscription h1, p, span{
@@ -147,12 +147,42 @@ nav li a{
     color: rgb(187, 187, 187);
 }
 
+.social-network-container{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 10px 0 0;
+    /* align-items: center; */
+}
+
+.social-network-gmail{
+    background: url('../img/gmail.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+.social-network-youtube{
+    background: url('../img/youtube.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    margin: 15px 0;
+}
+.social-network-twitter{
+    background: url('../img/twitter.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
  /* HEADER */
 
 
  .movies-container{
      width: 100%;
-     height: 150vh;
+     height: 200vh;
      background: #050505;
  }
 
@@ -174,10 +204,11 @@ nav li a{
     display: flex;
     overflow: auto;
     align-items: center;
+    justify-content:center;
  }
 
  .playlist-img::-webkit-scrollbar{
-    height: 10px;
+    height: 7px;
  }
 
  .playlist-img::-webkit-scrollbar-thumb{
@@ -188,7 +219,7 @@ nav li a{
  .playlist-img-container{
     width: 100%;
     height: 100%;
-     
+    
 }
 
  .playlist-title{
@@ -200,7 +231,7 @@ nav li a{
  .movie-title{
     margin: 15px 0;
     color: white;
-    text-align: center;   
+    text-align: center;
 }
 
 
@@ -225,7 +256,7 @@ nav li a{
 }
 
 .img-container{
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 0;
 }
 
