@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: arial;
+}
+
+ /* HEADER */
+
+header{
+    width: 0 auto;
+    height: 100vh;
+    background: url("https://images2.alphacoders.com/108/1081310.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 10px 10px;
+}
+
+header nav{
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decoration li:nth-child(3){
+    border-left: 1px solid rgb(212, 211, 211);
+    font-weight: 300;
+    opacity: .8;
+    font-size: 1.4rem;
+}
+li img{
+    width: 20spx;
+    height: 20px;
+    color: white;
+}
+
+.profile-picture{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin: 5px 5px;
+}
+
+
+.usser-options{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav li a{
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.search-container input{
+    padding: 4px 150px;
+    text-align: center;
+    background: white;
+    opacity: .5;
+    border: 1px solid white;
+    border-radius: 2px;
+    outline: none;
+    transform: scale(1);
+    transition: opacity, transform .3s;
+}
+
+.search-container input:focus{
+    opacity: .7;
+    transform: scale(1.05);
+}
+
+.header-description-container{
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-description-container article p{
+    max-width: 985px;
+}
+
+.logo-hero-container img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.description-suscription{
+    color:white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.button-header1{
+    margin: 10px;
+    padding: 8px 20px;
+    background: rgb(165, 5, 5);
+    border: 1px solid #01030f;
+    color: rgb(214, 213, 213);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background .2s;
+    outline: none;
+}
+
+.button-header1:hover{
+    color: rgb(255, 255, 255);  
+    background: rgb(197, 4, 4); 
+}
+
+.description-suscription h1, p, span{
+    margin: 15px 0;
+}
+
+.description-suscription h1{
+    font-size: 3.4rem;
+    font-weight: 300;
+}
+
+.description-suscription span{
+    font-weight: 200;
+    font-size: 1.5rem;
+    opacity: .5;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.description-suscription p{
+    font-weight: 400;
+    color: rgb(187, 187, 187);
+}
+
+ /* HEADER */
+
+
+ .movies-container{
+     width: 100%;
+     height: 150vh;
+     background: #050505;
+ }
+
+ .playlist{
+     margin: 10px 0;
+     display: block;
+ }
+
+ .playlist-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+ }
+
+ .playlist-img{
+    width: 95%;
+    height: 100%;
+    margin: 20px 0;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+ }
+
+ .playlist-img::-webkit-scrollbar{
+    height: 10px;
+ }
+
+ .playlist-img::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 4px;
+}
+
+ .playlist-img-container{
+    width: 100%;
+    height: 100%;
+     
+}
+
+ .playlist-title{
+    color: white;
+    font-weight: 400;
+    font-size: 3rem;
+ }
+
+ .movie-title{
+    margin: 15px 0;
+    color: white;
+    text-align: center;   
+}
+
+
+.playlist-img .img{
+    width: 100px;
+    height: 100px;
+}
+
+.img-movie{
+    width: 200px;
+    height: 250px;
+    border-radius: 2px;
+    margin: 0 5px;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.img-movie:hover{
+    opacity: .5;
+}
+
+.img-container{
+    margin: 10px 0;
+    padding: 0;
+}
+
+.playlist-item-title{
+    color:white;
+}
+
+.playlist small{
+    opacity: .6;
+    color: white;
+}
