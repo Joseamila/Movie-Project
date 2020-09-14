@@ -12,12 +12,12 @@
     <!-- HEADER -->
 
 
-    <header>
-        <nav>
+    <header >
+        <nav >      
             <ul>
                 <div class="usser-options decoration">
                     <li>
-                        <a href="#"> <img src="img/open-menu.png" alt=""> </a>
+                        <img class="hamburguerMenu" id="hamburguer-menu" src="img/open-menu.png" alt="Hamburguer menu">
                     </li>
                     <li>
                         <a href="#">Play</a>
@@ -26,13 +26,10 @@
                         <a href="#movies">Movies</a>
                     </li>
                 </div>
-                    <form class="search-container" id="form">
+                    <form class="search-container" id="form" autocomplete="on">
                         <input type="text" name="play" placeholder="Search movies or series">
                     </form>
                 <div class="usser-options">
-                    <li>
-                        <a href="#"> <img src="img/grid-menu.png" alt=""> </a>
-                    </li>
                     <li>
                         <a href="#"> <img src="img/bell.png" alt=""> </a>
                     </li>
@@ -41,9 +38,17 @@
                 </div>
                                             
             </ul>
+            <div class="hamburguerMenu-options-container" id="hamburguerMenu-options-container">
+                <a href="#">Series</a>
+                <a href="#">My list</a>
+                <a href="#">Account</a>
+                <a href="#">Setting</a>
+                <a href="#">FAQ</a>
+
+            </div>
         </nav>
 
-        <section class="social-network-container">
+        <section id="menuClose" class="social-network-container">
             <div class="social-network-gmail"></div>
             <div class="social-network-youtube"></div>
             <div class="social-network-twitter"></div>
@@ -103,18 +108,22 @@
 
     
     
-    <section class="modal-content-container">
+    <section class="modal-content-container" id="modal">
         <div class="modal-description-container">
             <h2>Movie title</h2>
             <p class="modal-movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, animi.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quibusdam ducimus facere ad dignissimos porro maxime sed quos velit. Quos repellendus unde officiis quo nihil a repudiandae facere adipisci ex.
                 Voluptates dolorum tenetur veritatis odit quibusdam, recusandae cum dignissimos, eaque eveniet omnis maiores eos natus nisi quis. Voluptatem recusandae ducimus facere.
             </p>
-            <small>Ver trailer</small>
+            <small>Watch trailer</small>
+            <div class="button-container" id="closeModal">
+                <button>Close</button>
+            </div>
         </div>
         <figure class="modal-content">
             <img src="img/social.jpg" alt="modal-movie-cover">
         </figure>
+        
     </section>
 
     <!-- Modal -->
