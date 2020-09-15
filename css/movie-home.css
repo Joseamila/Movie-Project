@@ -270,3 +270,45 @@ nav li a{
     opacity: .6;
     color: white;
 }
+
+/* notifications */
+
+.notifications-container{
+    color: white;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid white;
+    transition: .8s linear;
+
+    display: none;
+}
+
+.notifications-container.active{
+    display: flex;
+}
+
+.notifications-container small{
+    opacity: .6;
+}
+
+.notifications-container a{
+    margin: 10px 60px;
+    padding: 10px;
+    border-top: 1px solid white;
+}
+
+.notifications-container a:nth-child(1){
+    margin: 0;
+    border-top: none;
+}
+
+.notification-bell:hover{
+    display: flex;
+}
+
+
+/* notifications */

@@ -12,19 +12,19 @@
     // Buscador
 
     // const $closeModalContainer = document.getElementById('cerrarModal');
-    const $form = document.getElementById('form');
+    // const $form = document.getElementById('form');
 
 
-    $form.addEventListener('submit', (event) =>{
-        event.preventDefault();
-        $modalContainer.style.transform = "transitionX(0)";
-    })
+    // $form.addEventListener('submit', (event) =>{
+    //     event.preventDefault();
+    //     $modalContainer.style.transform = "transitionX(0)";
+    // })
 
     // Buscador
 
-        const {data: { movies:actionList} } = await getData('https://yts.mx/api/v2/list_movies.json?genre=action');
-        const {data: {movies: dramaList} } = await getData('https://yts.mx/api/v2/list_movies.json?genre=drama');
-        const {data: {movies: thrillerList} } = await getData('https://yts.mx/api/v2/list_movies.json?genre=thriller');
+        const {data: { movies: actionList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=action');
+        const {data: {movies: dramaList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=drama');
+        const {data: {movies: thrillerList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=thriller');
         console.log( 'actionList', actionList, 'dramaList', dramaList, 'thrillerList', thrillerList);
 
     // Promesa del API
@@ -34,7 +34,7 @@
 
         function videoTemplate(movie, category){
             return(
-                `<div class="playlist-img-container" data-id="${movie.id}" data-category ="${category}" >
+                `<div class="playlist-img-container" data-id="${movie.id}" data-category="${category}" >
                     <figure class="img-container">
                         <img class="img-movie" src="${movie.medium_cover_image}" alt="">
                     </figure>
@@ -86,11 +86,13 @@
 
     //  Modal
     const $modalContainer = document.getElementById('modal');
-    
     const $closeModal = document.getElementById('closeModal');
 
+
     function findById(list, id){
+
         return list.find(movie => movie.id === parseInt(id, 10))
+
     }
 
     function findMovie(id, category){
@@ -98,8 +100,9 @@
             case 'action' :{
                return findById(actionList, id)
             }
+
             case 'drama' :{
-              return  findById(dramaList, id)
+              return findById(dramaList, id)
             }
 
             default: {
@@ -108,14 +111,23 @@
         }
     }
 
+
+    const $titleMovie = document.getElementById('title-movie');
+    const $movieDescription = document.getElementById('movie-description');
+    const $movieImg = document.getElementById('movie-img');
+
     function showModal($element){
         $modalContainer.classList.add('active');
         $modalContainer.style.animation = "modalIn .8s forwards"
         const id = $element.dataset.id;
         const category = $element.dataset.category; 
+        const data = findMovie (id, category)
 
-         $imgContainer.setAttribute('src', data.medium_cover_image)
-         $descriptionContainer = document.getElementById('description');
+        $titleMovie.textContent = data.title;  
+        $movieDescription.textContent = data.description_full;
+        $movieImg.setAttribute('src', data.medium_cover_image);
+
+
     }
 
     $closeModal.addEventListener('click', closeModal);
@@ -125,30 +137,6 @@
     }
 
 
-
     //  Modal
-
-    // Hamburguer Menu
-
-    const $hamburguerIcon = document.getElementById("hamburguer-menu")
-    const $closeModalheader = document.getElementById('menuClose');
-    const $buguerguerMenu = document.getElementById('hamburguerMenu-options-container');
-
-    $hamburguerIcon.addEventListener('click', menuIn);
-
-    function menuIn(){
-       $buguerguerMenu.classList.add('active-menu');
-       $buguerguerMenu.style.animation = "hamburguerIn .8s forwards";
-    };
-
-
-     $closeModalheader.addEventListener('click', closeMenu);
-     function closeMenu(){
-
-         $buguerguerMenu.classList.add('active-menu');
-         $buguerguerMenu.style.animation = "hamburguerOut .8s forwards";
-    }
-    // Hamburguer Menu
-
 
  })()

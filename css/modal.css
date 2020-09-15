@@ -24,23 +24,28 @@
 .modal-content-container h2{
     font-weight: 400;
     font-size: 3.6rem;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    margin-bottom: 10px;
 }
 
 .modal-content-container p{
     font-weight: 100;
     font-size: 1.6rem;
     opacity: .7;
+    margin: 20px 0;
+    text-align: justify;
 }
 
 .modal-content-container small{
     text-decoration: underline;
+    margin-bottom: 10px;
 }
 
 .modal-description-container{
     background: #050505;
     display: inherit;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
     height: 80%;
     justify-content: center;
     text-align: center;
@@ -52,12 +57,18 @@
 .modal-content{
     width: 50%;
     height: 80%;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content img{
-    width: 100%;
+    width:50%;
     height: 100%;
     object-fit: cover;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 .button-container{
@@ -88,7 +99,55 @@
 }
 
 
-@keyframes modalIn {
+  .hamburguerMenu{
+    margin: 0 10px;
+    cursor: pointer;
+    animation: modalIn .5s linear;
+  }
+
+  .close-hamburguerMenu{
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburguerMenu-options-container{
+      min-width: 10%;
+      flex-direction: column;
+      background: rgb(235, 235, 235);
+      border: 1px solid black;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      position: absolute;
+      animation: modalIn .5s linear;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      will-change: auto;
+  }
+
+  .hamburguerMenu-options-container.active-menu{
+      display: flex;
+  }
+
+  .hamburguerMenu-options-container a{
+    color: black;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+    border-top: 1px solid rgb(196, 196, 196);
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  .hamburguerMenu-options-container a:nth-child(1){
+    border-top: none;
+    margin: 5px;
+  }
+
+  
+  @keyframes modalIn {
     0% {
       transition: ease-in-out;
       transform: translateX(-1500px);
@@ -116,66 +175,24 @@
 
   @keyframes hamburguerIn {
     0% {
-      transition: ease-in-out;
-      transform: translateX(-500px);
+      transition: linear;
+      transform: translateX(-200px);
     }
 
     100% {
-      transition: ease-in-out;
+      transition: linear;
       transform: translateX(0px);
     }
   }
 
   @keyframes hamburguerOut {
     0% {
-        transition: ease-in-out;
+        transition: linear;
       transform: translateX(0px);
     }
   
     100% {
-        transition: ease-in-out;
-      transform: translateX(-500px);
+        transition: linear;
+      transform: translateX(-200px);
     }
   }
-
-  .hamburguerMenu{
-    margin: 0 10px;
-    cursor: pointer;
-    animation: modalIn .5s linear;
-  }
-
-  .hamburguerMenu-options-container{
-      min-width: 10%;
-      flex-direction: column;
-      background: rgb(235, 235, 235);
-      border: 1px solid black;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-      position: absolute;
-      animation: modalIn .5s linear;
-      display: none;
-      align-items: center;
-      justify-content: center;
-  }
-
-  .hamburguerMenu-options-container.active-menu{
-      display: flex;
-  }
-
-  .hamburguerMenu-options-container a{
-    color: black;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    margin: 10px;
-    padding: 5px;
-    border-top: 1px solid rgb(196, 196, 196);
-    font-weight: 500;
-    font-size: 1.6rem;
-  }
-
-  .hamburguerMenu-options-container a:nth-child(1){
-    border-top: none;
-    margin: 5px;
-  }
-  

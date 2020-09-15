@@ -18,6 +18,7 @@
                 <div class="usser-options decoration">
                     <li>
                         <img class="hamburguerMenu" id="hamburguer-menu" src="img/open-menu.png" alt="Hamburguer menu">
+                        <img class="close-hamburguerMenu" id="close-hamburguerMenu" src="img/close.png" alt="">
                     </li>
                     <li>
                         <a href="#">Play</a>
@@ -31,7 +32,13 @@
                     </form>
                 <div class="usser-options">
                     <li>
-                        <a href="#"> <img src="img/bell.png" alt=""> </a>
+                        <a id="notification-bell" class="notification-bell" href="#"> <img src="img/bell.png" alt=""> </a>
+                        <div id="notification-bell-container" class="notifications-container">
+                            <a href="#">Our selection for you</a>
+                            <small>Today</small>
+                            <a href="#">Upcoming: From marvel: Daredevil</a>
+                            <a href="#">watching: Friends</a>
+                        </div>
                     </li>
 
                     <img class="profile-picture" src="img/Me.png" alt="Foto del usuario">
@@ -110,8 +117,8 @@
     
     <section class="modal-content-container" id="modal">
         <div class="modal-description-container">
-            <h2>Movie title</h2>
-            <p class="modal-movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, animi.
+            <h2 id="title-movie">Movie title</h2>
+            <p id="movie-description" class="modal-movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, animi.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quibusdam ducimus facere ad dignissimos porro maxime sed quos velit. Quos repellendus unde officiis quo nihil a repudiandae facere adipisci ex.
                 Voluptates dolorum tenetur veritatis odit quibusdam, recusandae cum dignissimos, eaque eveniet omnis maiores eos natus nisi quis. Voluptatem recusandae ducimus facere.
             </p>
@@ -121,7 +128,7 @@
             </div>
         </div>
         <figure class="modal-content">
-            <img src="img/social.jpg" alt="modal-movie-cover">
+            <img id="movie-img" src="img/social.jpg" alt="modal-movie-cover">
         </figure>
         
     </section>
@@ -130,5 +137,6 @@
 
 
     <script src="js/index.js"></script>
+    <script src="js/notifications-hamburguerMenu.js"></script>
 </body>
 </html>
