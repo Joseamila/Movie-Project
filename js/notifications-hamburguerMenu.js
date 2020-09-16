@@ -1,7 +1,7 @@
 // Hamburguer Menu
 
 const $hamburguerIcon = document.getElementById("hamburguer-menu")
-const $closeModalheader = document.getElementById('menuClose');
+const $closeHeader = document.getElementById('menuClose');
 const $buguerguerMenu = document.getElementById('hamburguerMenu-options-container');
 const $closeHamburguerMenu= document.getElementById('close-hamburguerMenu');
 
@@ -21,11 +21,12 @@ function menuIn(){
    });
 };
 
-$closeModalheader.addEventListener('click', closeMenu);
+$closeHeader.addEventListener('click', closeMenu);
 function closeMenu(){
     $hamburguerIcon.style.display = "flex";
     $closeHamburguerMenu.style.display= "none";
     $buguerguerMenu.style.animation = "hamburguerOut .3s forwards";
+    $notificationBellContainer.classList.remove('active')
 }
 // Hamburguer Menu
 

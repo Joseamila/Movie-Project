@@ -28,16 +28,22 @@
                     </li>
                 </div>
                     <form class="search-container" id="form" autocomplete="on">
-                        <input type="text" name="play" placeholder="Search movies or series">
+                        <input type="text" name="name" placeholder="Search movies or series">
                     </form>
                 <div class="usser-options">
                     <li>
                         <a id="notification-bell" class="notification-bell" href="#"> <img src="img/bell.png" alt=""> </a>
                         <div id="notification-bell-container" class="notifications-container">
-                            <a href="#">Our selection for you</a>
+                            
+                            <a href="#">Our selection for you:</a>
+                            <img src="img/social.jpg" alt=" Recomended image">
                             <small>Today</small>
-                            <a href="#">Upcoming: From marvel: Daredevil</a>
-                            <a href="#">watching: Friends</a>
+                            
+                            <a href="#">Upcoming:</strong><br><span>From marvel:Daredevil</span></a>
+                            <img src="https://www.cinemascomics.com/wp-content/uploads/2020/07/daredevil-savedaredevilcon-evento-virtual-960x560.jpg" alt="Upcoming image">
+                            
+                            <a href="#">Keep watching: Friends</a>
+                            <img src="https://turbologo.com/articles/wp-content/uploads/2019/12/friends-logo-cover.png.webp" alt="Keep watching image">
                         </div>
                     </li>
 
@@ -104,6 +110,22 @@
                 </div>
             </div>
 
+            <div class="playlist">
+                <h1 class="playlist-title">Comedy</h1>
+                <small>20 movies</small>
+                <div class="playlist-img" id="comedy">
+                    <img class="img" src="img/Loader.gif" alt="">
+                </div>
+            </div>
+
+            <div class="playlist">
+                <h1 class="playlist-title">Animation</h1>
+                <small>20 movies</small>
+                <div class="playlist-img" id="animation">
+                    <img class="img" src="img/Loader.gif" alt="">
+                </div>
+            </div>
+
         </article>
 
     </main>
@@ -112,17 +134,15 @@
 
 
     <!-- Modal -->
-
-    
-    
+  
     <section class="modal-content-container" id="modal">
-        <div class="modal-description-container">
+        <div id="modal-description-container" class="modal-description-container">
             <h2 id="title-movie">Movie title</h2>
             <p id="movie-description" class="modal-movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, animi.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quibusdam ducimus facere ad dignissimos porro maxime sed quos velit. Quos repellendus unde officiis quo nihil a repudiandae facere adipisci ex.
                 Voluptates dolorum tenetur veritatis odit quibusdam, recusandae cum dignissimos, eaque eveniet omnis maiores eos natus nisi quis. Voluptatem recusandae ducimus facere.
             </p>
-            <small>Watch trailer</small>
+            <small id="small-description">Watch trailer</small>
             <div class="button-container" id="closeModal">
                 <button>Close</button>
             </div>
@@ -130,7 +150,6 @@
         <figure class="modal-content">
             <img id="movie-img" src="img/social.jpg" alt="modal-movie-cover">
         </figure>
-        
     </section>
 
     <!-- Modal -->

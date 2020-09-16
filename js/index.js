@@ -9,23 +9,14 @@
         return data
     }
 
-    // Buscador
+        const BASE_API = 'https://yts.mx/api/v2/';
 
-    // const $closeModalContainer = document.getElementById('cerrarModal');
-    // const $form = document.getElementById('form');
-
-
-    // $form.addEventListener('submit', (event) =>{
-    //     event.preventDefault();
-    //     $modalContainer.style.transform = "transitionX(0)";
-    // })
-
-    // Buscador
-
-        const {data: { movies: actionList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=action');
-        const {data: {movies: dramaList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=drama');
-        const {data: {movies: thrillerList } } = await getData('https://yts.mx/api/v2/list_movies.json?genre=thriller');
-        console.log( 'actionList', actionList, 'dramaList', dramaList, 'thrillerList', thrillerList);
+        const {data: { movies: actionList } } = await getData(`${BASE_API}list_movies.json?genre=action`);
+        const {data: {movies: dramaList } } = await getData(`${BASE_API}list_movies.json?genre=drama`);
+        const {data: {movies: thrillerList } } = await getData(`${BASE_API}list_movies.json?genre=thriller`);
+        const {data: {movies: comedyList } } = await getData(`${BASE_API}list_movies.json?genre=comedy`);
+        const {data: {movies: animationList } } = await getData(`${BASE_API}list_movies.json?genre=animation`);
+        console.log( 'actionList', actionList, 'dramaList', dramaList, 'thrillerList', thrillerList, 'comedyList', comedyList, 'animationList', animationList);
 
     // Promesa del API
 
@@ -78,6 +69,12 @@
         const $thrillerListContainer = document.getElementById('thriller');
         renderMovieList(thrillerList, $thrillerListContainer, 'thriller');
 
+        const $comedyListContainer = document.getElementById('comedy');
+        renderMovieList(comedyList, $comedyListContainer, 'comedy');
+        
+        const $animationListContainer = document.getElementById('animation');
+        renderMovieList(animationList, $animationListContainer, 'animation');
+
 
 
     // Template de las peliculas
@@ -105,8 +102,16 @@
               return findById(dramaList, id)
             }
 
-            default: {
+            case 'thriller': {
                return findById(thrillerList, id)
+            }
+
+            case 'comedy': {
+                return findById(comedyList, id)
+            }
+
+            default :{
+                return findById(animationList, id)
             }
         }
     }
@@ -115,6 +120,7 @@
     const $titleMovie = document.getElementById('title-movie');
     const $movieDescription = document.getElementById('movie-description');
     const $movieImg = document.getElementById('movie-img');
+    const $smallDescription= document.getElementById('small-description');
 
     function showModal($element){
         $modalContainer.classList.add('active');
@@ -138,5 +144,20 @@
 
 
     //  Modal
+
+    
+    // Buscador
+
+    const $form = document.getElementById('form');
+
+
+    $form.addEventListener('submit', async (event) =>{
+        event.preventDefault();
+        $modalContainer.classList.add('active');
+        $modalContainer.style.animation = "modalIn .8s forwards"
+        
+    })
+
+    // Buscador
 
  })()
