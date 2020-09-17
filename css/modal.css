@@ -1,74 +1,85 @@
-.modal-content-container{
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,.5);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
+.modal-overlay{
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-content-container.active{
+
+.modal-overlay.active{
     display: flex;
 }
 
-.modal-content-container h2, .modal-content-container p, .modal-content-container small{
-    color: white;
-    max-width: 980px;
+.modal-description-container{
+  background: #050505;
+  display: none;
+  width: 80%;
+  height: 80%;
+  justify-content: center;
+  text-align: center;
+  transition:  1s;
+  will-change: transform;
 }
 
-.modal-content-container h2{
+.modal-description-container.active{
+  display: flex;
+}
+
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  padding: 10px;
+}
+
+.modal-description-container h2, .modal-description-container p, .modal-description-container small{
+    color: white;
+    max-width: 980px;
+    margin: 15px 0;
+}
+
+.modal-description-container h2{
     font-weight: 400;
     font-size: 3.6rem;
     border-bottom: 1px solid rgb(235, 235, 235);
-    margin-bottom: 10px;
 }
 
-.modal-content-container p{
+.modal-description-container p{
     font-weight: 100;
     font-size: 1.6rem;
     opacity: .7;
-    margin: 20px 0;
-    text-align: justify;
-}
-
-.modal-content-container small{
-    text-decoration: underline;
-    margin-bottom: 10px;
-}
-
-.modal-description-container{
-    background: #050505;
-    display: inherit;
-    flex-direction: column;
-    width: 30%;
-    height: 80%;
-    justify-content: center;
     text-align: center;
-    padding: 0 30px;
-    transition:  1s;
-    will-change: transform;
 }
 
-.modal-content{
-    width: 50%;
-    height: 80%;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    justify-content: center;
-    align-items: center;
+.modal-description-container small{
+    text-decoration: underline;
 }
 
-.modal-content img{
-    width:50%;
+.modal-picture{
+  display: flex;
+  margin-left: 40px;
+  width: 40%;
+  height: 100%;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-picture img{
+    width:100%;
     height: 100%;
     object-fit: cover;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    justify-content: flex-end;
+    border-radius: 2px;
 }
 
 .button-container{

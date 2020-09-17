@@ -82,8 +82,9 @@
 
 
     //  Modal
-    const $modalContainer = document.getElementById('modal');
+    const $modalOverlay = document.getElementById('modal');
     const $closeModal = document.getElementById('closeModal');
+    const $modalDescription = document.getElementById('modal-description-container');
 
 
     function findById(list, id){
@@ -123,8 +124,10 @@
     const $smallDescription= document.getElementById('small-description');
 
     function showModal($element){
-        $modalContainer.classList.add('active');
-        $modalContainer.style.animation = "modalIn .8s forwards"
+        $modalOverlay.classList.add('active');
+        $modalDescription.classList.add('active');
+        $modalDescription.style.animation = "modalIn .8s forwards"
+
         const id = $element.dataset.id;
         const category = $element.dataset.category; 
         const data = findMovie (id, category)
@@ -138,8 +141,7 @@
 
     $closeModal.addEventListener('click', closeModal);
     function closeModal(){
-        $modalContainer.classList.add('active');
-        $modalContainer.style.animation = "modalOut .8s forwards"
+        $modalOverlay.classList.remove('active');
     }
 
 
