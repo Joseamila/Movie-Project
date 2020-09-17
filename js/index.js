@@ -128,10 +128,7 @@
         $modalDescription.classList.add('active');
         $modalDescription.style.animation = "modalIn .8s forwards"
 
-        $closeModal.addEventListener('click', () =>{
-            
-            $modalOverlay.classList.remove('active');
-        });
+        $closeModal.addEventListener('click', () => $modalOverlay.classList.remove('active'));
 
         const id = $element.dataset.id;
         const category = $element.dataset.category; 
