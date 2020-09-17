@@ -128,6 +128,11 @@
         $modalDescription.classList.add('active');
         $modalDescription.style.animation = "modalIn .8s forwards"
 
+        $closeModal.addEventListener('click', () =>{
+            
+            $modalOverlay.classList.remove('active');
+        });
+
         const id = $element.dataset.id;
         const category = $element.dataset.category; 
         const data = findMovie (id, category)
@@ -135,7 +140,6 @@
         $titleMovie.textContent = data.title;  
         $movieDescription.textContent = data.description_full;
         $movieImg.setAttribute('src', data.medium_cover_image);
-
 
     }
 
