@@ -149,18 +149,65 @@
     //  Modal
 
     
-    // Buscador
+    // Searcher
 
     const $form = document.getElementById('form');
+    const $searcher = document.getElementById('searcher');
+    const $closeSearcherHeader = document.getElementById('header');
+    const $closeSearcherBody = document.getElementById('movies');
 
+
+    function setAttribures($element, attributes){
+        for (const attribute in attributes){
+            $element.setAttribute(attribute, attributes[attribute]);
+        }
+    }
+
+    function formTemplate(movie){
+        return(
+            `
+            <div class="searcher-container">
+                <h2>Movie Found:</h2>
+                <h3 class="search-movie-title">${movie.title}</h3>
+                <picture class="search-img-container">
+                    <img class="search-picture" src="${movie.medium_cover_image}" alt="Search image">
+                    <img class="star-icon" src="img/star.png" alt="">
+                    <figcaption>Rating: ${movie.rating}</figcaption> 
+                </picture>
+                <small>Duration: ${movie.runtime}</small>
+                <small>Year: ${movie.year}</small>
+                <a href="#">Watch trailer</a>
+            </div>
+            `
+        )
+    }
 
     $form.addEventListener('submit', async (event) =>{
         event.preventDefault();
-        $modalContainer.classList.add('active');
-        $modalContainer.style.animation = "modalIn .8s forwards"
+        $searcher.classList.add('active');
+        $searcher.style.animation = "searchIn .8s forwards"
+
+        const $loader = document.createElement('img');
+        setAttribures($loader, {
+            src: 'img/loader.gif',
+            height: 100,
+            width: 100,
+        })
+
+        $searcher.append($loader)
+
+        const data = new FormData($form);
+        const movie = await getData(`${BASE_API}list_movies.json?limit=1&query_term=${data.get('name')}`)
+
+        const HTMLString = formTemplate(movie.data.movies[0]);
+        $searcher.innerHTML = HTMLString
         
+
+        $closeSearcherHeader.addEventListener('click', () => $searcher.style.animation = "searchOut .8s forwards");
+        $closeSearcherBody.addEventListener('click', () => $searcher.style.animation = "searchOut .8s forwards");
+
     })
 
-    // Buscador
+    // Searcher
 
  })()
