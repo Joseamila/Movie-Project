@@ -16,7 +16,7 @@
         const {data: {movies: thrillerList } } = await getData(`${BASE_API}list_movies.json?genre=thriller`);
         const {data: {movies: comedyList } } = await getData(`${BASE_API}list_movies.json?genre=comedy`);
         const {data: {movies: animationList } } = await getData(`${BASE_API}list_movies.json?genre=animation`);
-        console.log( 'actionList', actionList, 'dramaList', dramaList, 'thrillerList', thrillerList, 'comedyList', comedyList, 'animationList', animationList);
+        
 
     // Promesa del API
 
